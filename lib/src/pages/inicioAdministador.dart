@@ -80,13 +80,10 @@ class inicioAdministrador extends StatelessWidget {
               ),
               onTap: () {},
             ),
-            Divider(
-              thickness: 0.5,
-              color: Colors.black,
-            ),
+            Divider(),
             ListTile(
               leading: SizedBox(
-                height: 38,
+                height: 40,
                 child: Image.asset("assets/img/IconoMesa.jpg"),
               ),
               title: Text('Mesas'),
@@ -100,16 +97,12 @@ class inicioAdministrador extends StatelessWidget {
               title: Text('Menús'),
               onTap: () {},
             ),
-            Divider(
-              thickness: 0.5,
-              color: Colors.black,
-            ),
             ListTile(
               leading: SizedBox(
                 height: 38,
                 child: Image.asset("assets/img/IconoIngresos.jpg"),
               ),
-              title: Text('Ingresos'),
+              title: Text('Pedidos'),
               onTap: () {},
             ),
             ListTile(
@@ -117,7 +110,7 @@ class inicioAdministrador extends StatelessWidget {
                 height: 38,
                 child: Image.asset("assets/img/IconoGastos.jpg"),
               ),
-              title: Text('Gastos'),
+              title: Text('Ventas'),
               onTap: () {},
             ),
             ListTile(
@@ -125,19 +118,15 @@ class inicioAdministrador extends StatelessWidget {
                 height: 38,
                 child: Image.asset("assets/img/IconoInformes.jpg"),
               ),
-              title: Text('Informes'),
+              title: Text('Trabajadores'),
               onTap: () {},
-            ),
-            Divider(
-              thickness: 0.5,
-              color: Colors.black,
             ),
             ListTile(
               leading: SizedBox(
                 height: 38,
                 child: Image.asset("assets/img/IconoInventario.jpg"),
               ),
-              title: Text('Inventario'),
+              title: Text('Informes'),
               onTap: () {},
             ),
             ListTile(
@@ -153,12 +142,8 @@ class inicioAdministrador extends StatelessWidget {
                 height: 38,
                 child: Image.asset("assets/img/IconoOrdenesdeCompra.jpg"),
               ),
-              title: Text('Ordenes de compra'),
+              title: Text('Inventario'),
               onTap: () {},
-            ),
-            Divider(
-              thickness: 0.5,
-              color: Colors.black,
             ),
             ListTile(
               leading: SizedBox(
@@ -172,7 +157,7 @@ class inicioAdministrador extends StatelessWidget {
         ),
       ),
       body: Container(
-        color: Colors.white,
+        color: Color.fromARGB(231, 231, 231, 231),
         padding: EdgeInsets.only(
           top: 15,
         ),
@@ -211,9 +196,9 @@ class inicioAdministrador extends StatelessWidget {
                           child: Column(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(3.0),
+                                padding: const EdgeInsets.all(0),
                                 child: SizedBox(
-                                  height: 50,
+                                  height: 56,
                                   child:
                                       Image.asset('assets/img/MesaColor.jpg'),
                                 ),
@@ -270,9 +255,9 @@ class inicioAdministrador extends StatelessWidget {
                           child: Column(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(3.0),
+                                padding: const EdgeInsets.all(5.0),
                                 child: SizedBox(
-                                  height: 50,
+                                  height: 46,
                                   child:
                                       Image.asset('assets/img/MenuColor.jpg'),
                                 ),
@@ -304,7 +289,7 @@ class inicioAdministrador extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Sección Ingresos //
+                // Sección Pedidos //
                 Column(
                   children: [
                     Padding(
@@ -334,22 +319,22 @@ class inicioAdministrador extends StatelessWidget {
                           child: Column(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(3.0),
+                                padding: const EdgeInsets.all(4.0),
                                 child: SizedBox(
-                                  height: 50,
+                                  height: 48,
                                   child: Image.asset(
-                                      'assets/img/IngresosColor.jpg'),
+                                      'assets/img/PedidosColor.jpg'),
                                 ),
                               ),
                               Text(
-                                "Ingresos",
+                                "Pedidos",
                                 style: TextStyle(
                                   color: Color.fromRGBO(1, 46, 103, 1),
                                 ),
                                 textAlign: TextAlign.center,
                               ),
                               Text(
-                                "Consulte la cantidad de ingresos generados",
+                                "Consulte los pedidos realizados por mesa",
                                 style: TextStyle(
                                   color: Colors.grey,
                                   fontSize: 9,
@@ -363,7 +348,7 @@ class inicioAdministrador extends StatelessWidget {
                     ),
                   ],
                 ),
-                // Sección Gastos //
+                // Sección Ventas //
                 Column(
                   children: [
                     Padding(
@@ -397,18 +382,18 @@ class inicioAdministrador extends StatelessWidget {
                                 child: SizedBox(
                                   height: 50,
                                   child:
-                                      Image.asset('assets/img/GastosColor.jpg'),
+                                      Image.asset('assets/img/VentasColor.jpg'),
                                 ),
                               ),
                               Text(
-                                "Gastos",
+                                "Ventas",
                                 style: TextStyle(
                                   color: Color.fromRGBO(1, 46, 103, 1),
                                 ),
                                 textAlign: TextAlign.center,
                               ),
                               Text(
-                                "Consulte la cantidad de gastos realizados",
+                                "Consulte las ventas realizadas",
                                 style: TextStyle(
                                   color: Colors.grey,
                                   fontSize: 10,
@@ -427,6 +412,65 @@ class inicioAdministrador extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                // Sección Trabajadores //
+                Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(10),
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.white),
+                          shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              side: BorderSide(
+                                width: 0.5,
+                                color: Colors.grey, // Color del borde exterior
+                              ),
+                            ),
+                          ),
+                          overlayColor: MaterialStateProperty.all(
+                            Colors.white
+                                .withOpacity(0.2), // Color de superposición
+                          ),
+                        ),
+                        onPressed: () {},
+                        child: SizedBox(
+                          width: 100,
+                          height: 100,
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(6.0),
+                                child: SizedBox(
+                                  height: 46,
+                                  child: Image.asset(
+                                      'assets/img/TrabajadoresColor.jpg'),
+                                ),
+                              ),
+                              Text(
+                                "Trabajadores",
+                                style: TextStyle(
+                                  color: Color.fromRGBO(1, 46, 103, 1),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              Text(
+                                "Consulte el personal de la empresa",
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 8.9,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
                 // Sección Informes //
                 Column(
                   children: [
@@ -457,9 +501,9 @@ class inicioAdministrador extends StatelessWidget {
                           child: Column(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(3.0),
+                                padding: const EdgeInsets.all(6.0),
                                 child: SizedBox(
-                                  height: 50,
+                                  height: 47,
                                   child: Image.asset(
                                       'assets/img/InformesColor.jpg'),
                                 ),
@@ -472,7 +516,7 @@ class inicioAdministrador extends StatelessWidget {
                                 textAlign: TextAlign.center,
                               ),
                               Text(
-                                "Consulte las estadísticas de la empresa",
+                                "Consulte las estadisticas de la empresa",
                                 style: TextStyle(
                                   color: Colors.grey,
                                   fontSize: 8.9,
@@ -486,72 +530,12 @@ class inicioAdministrador extends StatelessWidget {
                     ),
                   ],
                 ),
-                // Sección Inventario //
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(10),
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
-                          shape: MaterialStateProperty.all(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              side: BorderSide(
-                                width: 0.5,
-                                color: Colors.grey, // Color del borde exterior
-                              ),
-                            ),
-                          ),
-                          overlayColor: MaterialStateProperty.all(
-                            Colors.white
-                                .withOpacity(0.2), // Color de superposición
-                          ),
-                        ),
-                        onPressed: () {},
-                        child: SizedBox(
-                          width: 100,
-                          height: 100,
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(3.0),
-                                child: SizedBox(
-                                  height: 50,
-                                  child: Image.asset(
-                                      'assets/img/InventarioColor.jpg'),
-                                ),
-                              ),
-                              Text(
-                                "Inventario",
-                                style: TextStyle(
-                                  color: Color.fromRGBO(1, 46, 103, 1),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                              Text(
-                                "Consulte el stock disponible",
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 10,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                // Sección Proveedores //
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Sección Inventario //
+                // Sección Proveedores //
                 Column(
                   children: [
                     Padding(
@@ -610,7 +594,7 @@ class inicioAdministrador extends StatelessWidget {
                     ),
                   ],
                 ),
-                // Sección Ordenes de compra //
+                // Sección Inventario //
                 Column(
                   children: [
                     Padding(
@@ -644,19 +628,18 @@ class inicioAdministrador extends StatelessWidget {
                                 child: SizedBox(
                                   height: 50,
                                   child: Image.asset(
-                                      'assets/img/OrdenesdeCompraColor.jpg'),
+                                      'assets/img/InventarioColor.jpg'),
                                 ),
                               ),
                               Text(
-                                "Ordenes de compra",
+                                "Inventario",
                                 style: TextStyle(
-                                  fontSize: 11,
                                   color: Color.fromRGBO(1, 46, 103, 1),
                                 ),
                                 textAlign: TextAlign.center,
                               ),
                               Text(
-                                "Consulte las órdenes de compra",
+                                "Consulte el stock disponible",
                                 style: TextStyle(
                                   color: Colors.grey,
                                   fontSize: 10,
