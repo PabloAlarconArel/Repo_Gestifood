@@ -32,6 +32,7 @@ class _LoginState extends State<Login> {
       resizeToAvoidBottomInset: false,
       // AppBar //
       appBar: AppBar(
+        elevation: 0,
         title: Center(
           child: Text(
             "GestiFood",
@@ -41,7 +42,7 @@ class _LoginState extends State<Login> {
             ),
           ),
         ),
-        backgroundColor: Color.fromRGBO(0, 0, 0, 0.9),
+        backgroundColor: Color.fromRGBO(1, 46, 103, 1),
       ),
       body: Form(
         key: _formkey,
@@ -58,6 +59,7 @@ class _LoginState extends State<Login> {
               Text(
                 "¡Bienvenido de vuelta!",
                 style: TextStyle(
+                  color: Color.fromRGBO(57, 57, 57, 1),
                   fontSize: 28,
                 ),
               ),
@@ -66,7 +68,7 @@ class _LoginState extends State<Login> {
                 child: Text(
                   "Nos alegramos de verte de nuevo",
                   style: TextStyle(
-                    color: Colors.grey,
+                    color: Color.fromRGBO(0, 0, 0, 0.7),
                     fontSize: 12,
                   ),
                 ),
@@ -91,8 +93,8 @@ class _LoginState extends State<Login> {
                       decoration: InputDecoration(
                         labelText: 'Correo electrónico',
                         prefixIcon: Icon(
-                          color: Colors.black,
-                          Icons.mail,
+                          color: Color.fromRGBO(0, 0, 0, 0.7),
+                          Icons.mail_outline_outlined,
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
@@ -123,8 +125,8 @@ class _LoginState extends State<Login> {
                       decoration: InputDecoration(
                         labelText: 'Contraseña',
                         prefixIcon: Icon(
-                          color: Colors.black,
-                          Icons.key,
+                          color: Color.fromRGBO(0, 0, 0, 0.7),
+                          Icons.lock_person_outlined,
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
@@ -155,7 +157,7 @@ class _LoginState extends State<Login> {
                                   _isChecked = newValue!;
                                 });
                               },
-                              activeColor: Colors.black,
+                              activeColor: Color.fromRGBO(1, 46, 103, 1),
                               visualDensity: VisualDensity.compact,
                               shape: CircleBorder(),
                               materialTapTargetSize:
@@ -165,7 +167,7 @@ class _LoginState extends State<Login> {
                           Text(
                             "Recordar contraseña",
                             style: TextStyle(
-                              color: Colors.black,
+                              color: Color.fromRGBO(57, 57, 57, 1),
                               fontSize: 10,
                             ),
                           ),
@@ -191,7 +193,7 @@ class _LoginState extends State<Login> {
                       ),
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
-                            Color.fromRGBO(0, 0, 0, 0.9)),
+                            Color.fromRGBO(1, 46, 103, 1)),
                         shape: MaterialStateProperty.all(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
@@ -211,7 +213,7 @@ class _LoginState extends State<Login> {
                       child: Text(
                         "¿Olvidaste tu contraseña?",
                         style: TextStyle(
-                          color: Colors.black,
+                          color: Color.fromRGBO(57, 57, 57, 1),
                           fontSize: 10,
                         ),
                       ),

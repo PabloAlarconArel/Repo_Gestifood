@@ -9,6 +9,7 @@ class inicioAdministrador extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       // AppBar //
       appBar: AppBar(
+        elevation: 0.0,
         title: Text(
           "Menú principal",
           style: TextStyle(
@@ -18,7 +19,7 @@ class inicioAdministrador extends StatelessWidget {
         ),
         centerTitle:
             true, // Establecer esta propiedad en true para centrar el título
-        backgroundColor: Color.fromRGBO(0, 0, 0, 0.9),
+        backgroundColor: Color.fromRGBO(1, 46, 103, 1),
       ),
       // Menu lateral (Drawer) //
       drawer: Drawer(
@@ -29,7 +30,7 @@ class inicioAdministrador extends StatelessWidget {
               height: 130,
               child: DrawerHeader(
                 decoration: BoxDecoration(
-                  color: Color.fromRGBO(0, 0, 0, 0.9),
+                  color: Color.fromRGBO(1, 46, 103, 1),
                 ),
                 child: Column(
                   children: [
@@ -71,7 +72,7 @@ class inicioAdministrador extends StatelessWidget {
             ),
             ListTile(
               leading: SizedBox(
-                height: 34,
+                height: 38,
                 child: Image.asset("assets/img/IconoMenuPrincipal.jpg"),
               ),
               title: Text(
@@ -80,18 +81,17 @@ class inicioAdministrador extends StatelessWidget {
               ),
               onTap: () {},
             ),
-            Divider(),
             ListTile(
               leading: SizedBox(
-                height: 40,
-                child: Image.asset("assets/img/IconoMesa.jpg"),
+                height: 38,
+                child: Image.asset("assets/img/IconoMesas.jpg"),
               ),
               title: Text('Mesas'),
               onTap: () {},
             ),
             ListTile(
               leading: SizedBox(
-                height: 34,
+                height: 38,
                 child: Image.asset("assets/img/IconoMenu.jpg"),
               ),
               title: Text('Menús'),
@@ -100,7 +100,7 @@ class inicioAdministrador extends StatelessWidget {
             ListTile(
               leading: SizedBox(
                 height: 38,
-                child: Image.asset("assets/img/IconoIngresos.jpg"),
+                child: Image.asset("assets/img/IconoPedidos.jpg"),
               ),
               title: Text('Pedidos'),
               onTap: () {},
@@ -108,7 +108,7 @@ class inicioAdministrador extends StatelessWidget {
             ListTile(
               leading: SizedBox(
                 height: 38,
-                child: Image.asset("assets/img/IconoGastos.jpg"),
+                child: Image.asset("assets/img/IconoVentas.jpg"),
               ),
               title: Text('Ventas'),
               onTap: () {},
@@ -116,7 +116,7 @@ class inicioAdministrador extends StatelessWidget {
             ListTile(
               leading: SizedBox(
                 height: 38,
-                child: Image.asset("assets/img/IconoInformes.jpg"),
+                child: Image.asset("assets/img/IconoTrabajadores.jpg"),
               ),
               title: Text('Trabajadores'),
               onTap: () {},
@@ -124,7 +124,7 @@ class inicioAdministrador extends StatelessWidget {
             ListTile(
               leading: SizedBox(
                 height: 38,
-                child: Image.asset("assets/img/IconoInventario.jpg"),
+                child: Image.asset("assets/img/IconoInformes.jpg"),
               ),
               title: Text('Informes'),
               onTap: () {},
@@ -132,7 +132,7 @@ class inicioAdministrador extends StatelessWidget {
             ListTile(
               leading: SizedBox(
                 height: 38,
-                child: Image.asset("assets/img/IconoProveedor.jpg"),
+                child: Image.asset("assets/img/IconoProveedores.jpg"),
               ),
               title: Text('Proveedores'),
               onTap: () {},
@@ -140,14 +140,14 @@ class inicioAdministrador extends StatelessWidget {
             ListTile(
               leading: SizedBox(
                 height: 38,
-                child: Image.asset("assets/img/IconoOrdenesdeCompra.jpg"),
+                child: Image.asset("assets/img/IconoInventario.jpg"),
               ),
               title: Text('Inventario'),
               onTap: () {},
             ),
             ListTile(
               leading: SizedBox(
-                height: 34,
+                height: 38,
                 child: Image.asset("assets/img/IconoCerrarSesion.jpg"),
               ),
               title: Text('Cerrar sesión'),
@@ -157,7 +157,7 @@ class inicioAdministrador extends StatelessWidget {
         ),
       ),
       body: Container(
-        color: Color.fromARGB(231, 231, 231, 231),
+        color: Colors.white,
         padding: EdgeInsets.only(
           top: 15,
         ),
@@ -170,42 +170,46 @@ class inicioAdministrador extends StatelessWidget {
                 Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(10),
+                      padding: EdgeInsets.symmetric(horizontal: 5),
                       child: ElevatedButton(
                         style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
+                          backgroundColor: MaterialStateProperty.all(
+                              Color.fromRGBO(245, 248, 255, 1)),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                               side: BorderSide(
-                                width: 0.5,
-                                color: Colors.grey, // Color del borde exterior
+                                width: 0,
+                                color: Color.fromRGBO(193, 211, 255,
+                                    1), // Color del borde exterior
                               ),
                             ),
                           ),
                           overlayColor: MaterialStateProperty.all(
-                            Colors.white
+                            Color.fromRGBO(245, 248, 255, 1)
                                 .withOpacity(0.2), // Color de superposición
                           ),
+                          elevation: MaterialStateProperty.all(
+                              0.0), // Quítale las sombras
                         ),
                         onPressed: () {},
                         child: SizedBox(
-                          width: 100,
-                          height: 100,
+                          width: 124,
+                          height: 110,
                           child: Column(
                             children: [
                               Padding(
                                 padding: const EdgeInsets.all(0),
                                 child: SizedBox(
-                                  height: 56,
+                                  height: 60,
                                   child:
-                                      Image.asset('assets/img/MesaColor.jpg'),
+                                      Image.asset('assets/img/MesasColor.jpg'),
                                 ),
                               ),
                               Text(
                                 "Mesas",
                                 style: TextStyle(
+                                  fontSize: 16,
                                   color: Color.fromRGBO(1, 46, 103, 1),
                                 ),
                                 textAlign: TextAlign.center,
@@ -213,7 +217,7 @@ class inicioAdministrador extends StatelessWidget {
                               Text(
                                 "Agregue, modifique o elimine mesas",
                                 style: TextStyle(
-                                  color: Colors.grey,
+                                  color: Color.fromRGBO(57, 57, 57, 1),
                                   fontSize: 10,
                                 ),
                                 textAlign: TextAlign.center,
@@ -229,35 +233,38 @@ class inicioAdministrador extends StatelessWidget {
                 Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(10),
+                      padding: EdgeInsets.symmetric(horizontal: 5),
                       child: ElevatedButton(
                         style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
+                          backgroundColor: MaterialStateProperty.all(
+                              Color.fromRGBO(245, 248, 255, 1)),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                               side: BorderSide(
-                                width: 0.5,
-                                color: Colors.grey, // Color del borde exterior
+                                width: 0,
+                                color: Color.fromRGBO(193, 211, 255,
+                                    1), // Color del borde exterior
                               ),
                             ),
                           ),
                           overlayColor: MaterialStateProperty.all(
-                            Colors.white
+                            Color.fromRGBO(245, 248, 255, 1)
                                 .withOpacity(0.2), // Color de superposición
                           ),
+                          elevation: MaterialStateProperty.all(
+                              0.0), // Quítale las sombras
                         ),
                         onPressed: () {},
                         child: SizedBox(
-                          width: 100,
-                          height: 100,
+                          width: 124,
+                          height: 110,
                           child: Column(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(5.0),
+                                padding: const EdgeInsets.all(0),
                                 child: SizedBox(
-                                  height: 46,
+                                  height: 60,
                                   child:
                                       Image.asset('assets/img/MenuColor.jpg'),
                                 ),
@@ -265,6 +272,7 @@ class inicioAdministrador extends StatelessWidget {
                               Text(
                                 "Menús",
                                 style: TextStyle(
+                                  fontSize: 16,
                                   color: Color.fromRGBO(1, 46, 103, 1),
                                 ),
                                 textAlign: TextAlign.center,
@@ -272,7 +280,7 @@ class inicioAdministrador extends StatelessWidget {
                               Text(
                                 "Agregue, modifique o elimine menús",
                                 style: TextStyle(
-                                  color: Colors.grey,
+                                  color: Color.fromRGBO(57, 57, 57, 1),
                                   fontSize: 10,
                                 ),
                                 textAlign: TextAlign.center,
@@ -293,35 +301,39 @@ class inicioAdministrador extends StatelessWidget {
                 Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(10),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 5, vertical: 10),
                       child: ElevatedButton(
                         style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
+                          backgroundColor: MaterialStateProperty.all(
+                              Color.fromRGBO(245, 248, 255, 1)),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                               side: BorderSide(
-                                width: 0.5,
-                                color: Colors.grey, // Color del borde exterior
+                                width: 0,
+                                color: Color.fromRGBO(193, 211, 255,
+                                    1), // Color del borde exterior
                               ),
                             ),
                           ),
                           overlayColor: MaterialStateProperty.all(
-                            Colors.white
+                            Color.fromRGBO(245, 248, 255, 1)
                                 .withOpacity(0.2), // Color de superposición
                           ),
+                          elevation: MaterialStateProperty.all(
+                              0.0), // Quítale las sombras
                         ),
                         onPressed: () {},
                         child: SizedBox(
-                          width: 100,
-                          height: 100,
+                          width: 124,
+                          height: 110,
                           child: Column(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(4.0),
+                                padding: const EdgeInsets.all(1),
                                 child: SizedBox(
-                                  height: 48,
+                                  height: 60,
                                   child: Image.asset(
                                       'assets/img/PedidosColor.jpg'),
                                 ),
@@ -329,6 +341,7 @@ class inicioAdministrador extends StatelessWidget {
                               Text(
                                 "Pedidos",
                                 style: TextStyle(
+                                  fontSize: 16,
                                   color: Color.fromRGBO(1, 46, 103, 1),
                                 ),
                                 textAlign: TextAlign.center,
@@ -336,8 +349,8 @@ class inicioAdministrador extends StatelessWidget {
                               Text(
                                 "Consulte los pedidos realizados por mesa",
                                 style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 9,
+                                  color: Color.fromRGBO(57, 57, 57, 1),
+                                  fontSize: 10,
                                 ),
                                 textAlign: TextAlign.center,
                               ),
@@ -352,35 +365,39 @@ class inicioAdministrador extends StatelessWidget {
                 Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(10),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 5, vertical: 10),
                       child: ElevatedButton(
                         style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
+                          backgroundColor: MaterialStateProperty.all(
+                              Color.fromRGBO(245, 248, 255, 1)),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                               side: BorderSide(
-                                width: 0.5,
-                                color: Colors.grey, // Color del borde exterior
+                                width: 0,
+                                color: Color.fromRGBO(193, 211, 255,
+                                    1), // Color del borde exterior
                               ),
                             ),
                           ),
                           overlayColor: MaterialStateProperty.all(
-                            Colors.white
+                            Color.fromRGBO(245, 248, 255, 1)
                                 .withOpacity(0.2), // Color de superposición
                           ),
+                          elevation: MaterialStateProperty.all(
+                              0.0), // Quítale las sombras
                         ),
                         onPressed: () {},
                         child: SizedBox(
-                          width: 100,
-                          height: 100,
+                          width: 124,
+                          height: 110,
                           child: Column(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(3.0),
+                                padding: const EdgeInsets.all(1),
                                 child: SizedBox(
-                                  height: 50,
+                                  height: 60,
                                   child:
                                       Image.asset('assets/img/VentasColor.jpg'),
                                 ),
@@ -388,6 +405,7 @@ class inicioAdministrador extends StatelessWidget {
                               Text(
                                 "Ventas",
                                 style: TextStyle(
+                                  fontSize: 16,
                                   color: Color.fromRGBO(1, 46, 103, 1),
                                 ),
                                 textAlign: TextAlign.center,
@@ -395,7 +413,7 @@ class inicioAdministrador extends StatelessWidget {
                               Text(
                                 "Consulte las ventas realizadas",
                                 style: TextStyle(
-                                  color: Colors.grey,
+                                  color: Color.fromRGBO(57, 57, 57, 1),
                                   fontSize: 10,
                                 ),
                                 textAlign: TextAlign.center,
@@ -416,35 +434,38 @@ class inicioAdministrador extends StatelessWidget {
                 Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(10),
+                      padding: EdgeInsets.symmetric(horizontal: 5),
                       child: ElevatedButton(
                         style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
+                          backgroundColor: MaterialStateProperty.all(
+                              Color.fromRGBO(245, 248, 255, 1)),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                               side: BorderSide(
-                                width: 0.5,
-                                color: Colors.grey, // Color del borde exterior
+                                width: 0,
+                                color: Color.fromRGBO(193, 211, 255,
+                                    1), // Color del borde exterior
                               ),
                             ),
                           ),
                           overlayColor: MaterialStateProperty.all(
-                            Colors.white
+                            Color.fromRGBO(245, 248, 255, 1)
                                 .withOpacity(0.2), // Color de superposición
                           ),
+                          elevation: MaterialStateProperty.all(
+                              0.0), // Quítale las sombras
                         ),
                         onPressed: () {},
                         child: SizedBox(
-                          width: 100,
-                          height: 100,
+                          width: 124,
+                          height: 110,
                           child: Column(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(6.0),
+                                padding: const EdgeInsets.all(1),
                                 child: SizedBox(
-                                  height: 46,
+                                  height: 60,
                                   child: Image.asset(
                                       'assets/img/TrabajadoresColor.jpg'),
                                 ),
@@ -452,6 +473,7 @@ class inicioAdministrador extends StatelessWidget {
                               Text(
                                 "Trabajadores",
                                 style: TextStyle(
+                                  fontSize: 16,
                                   color: Color.fromRGBO(1, 46, 103, 1),
                                 ),
                                 textAlign: TextAlign.center,
@@ -459,8 +481,8 @@ class inicioAdministrador extends StatelessWidget {
                               Text(
                                 "Consulte el personal de la empresa",
                                 style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 8.9,
+                                  color: Color.fromRGBO(57, 57, 57, 1),
+                                  fontSize: 10,
                                 ),
                                 textAlign: TextAlign.center,
                               ),
@@ -475,35 +497,38 @@ class inicioAdministrador extends StatelessWidget {
                 Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(10),
+                      padding: EdgeInsets.symmetric(horizontal: 5),
                       child: ElevatedButton(
                         style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
+                          backgroundColor: MaterialStateProperty.all(
+                              Color.fromRGBO(245, 248, 255, 1)),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                               side: BorderSide(
-                                width: 0.5,
-                                color: Colors.grey, // Color del borde exterior
+                                width: 0,
+                                color: Color.fromRGBO(193, 211, 255,
+                                    1), // Color del borde exterior
                               ),
                             ),
                           ),
                           overlayColor: MaterialStateProperty.all(
-                            Colors.white
+                            Color.fromRGBO(245, 248, 255, 1)
                                 .withOpacity(0.2), // Color de superposición
                           ),
+                          elevation: MaterialStateProperty.all(
+                              0.0), // Quítale las sombras
                         ),
                         onPressed: () {},
                         child: SizedBox(
-                          width: 100,
-                          height: 100,
+                          width: 124,
+                          height: 110,
                           child: Column(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(6.0),
+                                padding: const EdgeInsets.all(1),
                                 child: SizedBox(
-                                  height: 47,
+                                  height: 60,
                                   child: Image.asset(
                                       'assets/img/InformesColor.jpg'),
                                 ),
@@ -511,6 +536,7 @@ class inicioAdministrador extends StatelessWidget {
                               Text(
                                 "Informes",
                                 style: TextStyle(
+                                  fontSize: 16,
                                   color: Color.fromRGBO(1, 46, 103, 1),
                                 ),
                                 textAlign: TextAlign.center,
@@ -518,8 +544,8 @@ class inicioAdministrador extends StatelessWidget {
                               Text(
                                 "Consulte las estadisticas de la empresa",
                                 style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 8.9,
+                                  color: Color.fromRGBO(57, 57, 57, 1),
+                                  fontSize: 10,
                                 ),
                                 textAlign: TextAlign.center,
                               ),
@@ -539,35 +565,39 @@ class inicioAdministrador extends StatelessWidget {
                 Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(10),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 5, vertical: 10),
                       child: ElevatedButton(
                         style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
+                          backgroundColor: MaterialStateProperty.all(
+                              Color.fromRGBO(245, 248, 255, 1)),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                               side: BorderSide(
-                                width: 0.5,
-                                color: Colors.grey, // Color del borde exterior
+                                width: 0,
+                                color: Color.fromRGBO(193, 211, 255,
+                                    1), // Color del borde exterior
                               ),
                             ),
                           ),
                           overlayColor: MaterialStateProperty.all(
-                            Colors.white
+                            Color.fromRGBO(245, 248, 255, 1)
                                 .withOpacity(0.2), // Color de superposición
                           ),
+                          elevation: MaterialStateProperty.all(
+                              0.0), // Quítale las sombras
                         ),
                         onPressed: () {},
                         child: SizedBox(
-                          width: 100,
-                          height: 100,
+                          width: 124,
+                          height: 110,
                           child: Column(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(3.0),
+                                padding: const EdgeInsets.all(2),
                                 child: SizedBox(
-                                  height: 50,
+                                  height: 60,
                                   child: Image.asset(
                                       'assets/img/ProveedoresColor.jpg'),
                                 ),
@@ -575,6 +605,7 @@ class inicioAdministrador extends StatelessWidget {
                               Text(
                                 "Proveedores",
                                 style: TextStyle(
+                                  fontSize: 16,
                                   color: Color.fromRGBO(1, 46, 103, 1),
                                 ),
                                 textAlign: TextAlign.center,
@@ -582,7 +613,7 @@ class inicioAdministrador extends StatelessWidget {
                               Text(
                                 "Consulte los proveedores actuales",
                                 style: TextStyle(
-                                  color: Colors.grey,
+                                  color: Color.fromRGBO(57, 57, 57, 1),
                                   fontSize: 10,
                                 ),
                                 textAlign: TextAlign.center,
@@ -598,35 +629,39 @@ class inicioAdministrador extends StatelessWidget {
                 Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(10),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 5, vertical: 10),
                       child: ElevatedButton(
                         style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
+                          backgroundColor: MaterialStateProperty.all(
+                              Color.fromRGBO(245, 248, 255, 1)),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                               side: BorderSide(
-                                width: 0.5,
-                                color: Colors.grey, // Color del borde exterior
+                                width: 0,
+                                color: Color.fromRGBO(193, 211, 255,
+                                    1), // Color del borde exterior
                               ),
                             ),
                           ),
                           overlayColor: MaterialStateProperty.all(
-                            Colors.white
+                            Color.fromRGBO(245, 248, 255, 1)
                                 .withOpacity(0.2), // Color de superposición
                           ),
+                          elevation: MaterialStateProperty.all(
+                              0.0), // Quítale las sombras
                         ),
                         onPressed: () {},
                         child: SizedBox(
-                          width: 100,
-                          height: 100,
+                          width: 124,
+                          height: 110,
                           child: Column(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(3.0),
+                                padding: const EdgeInsets.all(2),
                                 child: SizedBox(
-                                  height: 50,
+                                  height: 60,
                                   child: Image.asset(
                                       'assets/img/InventarioColor.jpg'),
                                 ),
@@ -634,6 +669,7 @@ class inicioAdministrador extends StatelessWidget {
                               Text(
                                 "Inventario",
                                 style: TextStyle(
+                                  fontSize: 16,
                                   color: Color.fromRGBO(1, 46, 103, 1),
                                 ),
                                 textAlign: TextAlign.center,
@@ -641,7 +677,7 @@ class inicioAdministrador extends StatelessWidget {
                               Text(
                                 "Consulte el stock disponible",
                                 style: TextStyle(
-                                  color: Colors.grey,
+                                  color: Color.fromRGBO(57, 57, 57, 1),
                                   fontSize: 10,
                                 ),
                                 textAlign: TextAlign.center,
