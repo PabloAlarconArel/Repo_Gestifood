@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/src/pages/inicioAdministador.dart';
-import 'package:flutter_application_1/src/pages/inicioEmpleado.dart';
-import 'package:flutter_application_1/src/pages/login.dart';
+import 'package:flutter_application_1/src/routes/app_routes.dart';
 
 void main() => runApp(const MyApp());
 
@@ -12,12 +10,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: 'login',
-      routes: <String, WidgetBuilder>{
-        'login': ((BuildContext) => Login()),
-        'inicioAdministrador': ((BuildContext) => inicioAdministrador()),
-        'inicioEmpleado': ((BuildContext) => inicioEmpleado()),
-      },
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.routes,
+      onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }
 }

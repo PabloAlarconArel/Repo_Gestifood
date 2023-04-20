@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/src/pages/inicioAdministador.dart';
+import 'package:flutter_application_1/src/pages/inicioAdministrador.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -21,7 +21,7 @@ class _LoginState extends State<Login> {
     }
     // Aquí puede agregar la lógica para procesar el inicio de sesión
     final route = MaterialPageRoute(
-      builder: (context) => inicioAdministrador(),
+      builder: (context) => const InicioAdministrador(),
     );
     Navigator.push(context, route);
   }
@@ -33,7 +33,7 @@ class _LoginState extends State<Login> {
       // AppBar //
       appBar: AppBar(
         elevation: 0,
-        title: Center(
+        title: const Center(
           child: Text(
             "GestiFood",
             style: TextStyle(
@@ -42,7 +42,7 @@ class _LoginState extends State<Login> {
             ),
           ),
         ),
-        backgroundColor: Color.fromRGBO(1, 46, 103, 1),
+        backgroundColor: const Color.fromRGBO(1, 46, 103, 1),
       ),
       body: Form(
         key: _formkey,
@@ -56,15 +56,15 @@ class _LoginState extends State<Login> {
                 width: 200.0,
                 child: Image.asset('assets/img/LogoApp.jpg'),
               ),
-              Text(
+              const Text(
                 "¡Bienvenido de vuelta!",
                 style: TextStyle(
                   color: Color.fromRGBO(57, 57, 57, 1),
                   fontSize: 28,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(2.0),
+              const Padding(
+                padding: EdgeInsets.all(2.0),
                 child: Text(
                   "Nos alegramos de verte de nuevo",
                   style: TextStyle(
@@ -92,18 +92,18 @@ class _LoginState extends State<Login> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         labelText: 'Correo electrónico',
-                        prefixIcon: Icon(
+                        prefixIcon: const Icon(
                           color: Color.fromRGBO(0, 0, 0, 0.7),
                           Icons.mail_outline_outlined,
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),
-                        errorStyle: TextStyle(fontSize: 9),
+                        errorStyle: const TextStyle(fontSize: 9),
                         contentPadding:
                             const EdgeInsets.symmetric(horizontal: 20),
                       ),
-                      style: TextStyle(fontSize: 13),
+                      style: const TextStyle(fontSize: 13),
                       maxLines: 1, // Establecer el número máximo de líneas en 1
                     ),
                   ),
@@ -124,19 +124,19 @@ class _LoginState extends State<Login> {
                       obscureText: true,
                       decoration: InputDecoration(
                         labelText: 'Contraseña',
-                        prefixIcon: Icon(
+                        prefixIcon: const Icon(
                           color: Color.fromRGBO(0, 0, 0, 0.7),
                           Icons.lock_person_outlined,
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),
-                        errorStyle: TextStyle(fontSize: 9),
+                        errorStyle: const TextStyle(fontSize: 9),
                         contentPadding: const EdgeInsets.symmetric(
                             horizontal:
                                 20), // Establecer relleno interno del TextFormField
                       ),
-                      style: TextStyle(fontSize: 13),
+                      style: const TextStyle(fontSize: 13),
                       maxLines: 1, // Establecer el número máximo de líneas en 1
                     ),
                   ),
@@ -164,7 +164,7 @@ class _LoginState extends State<Login> {
                                   MaterialTapTargetSize.shrinkWrap,
                             ),
                           ),
-                          Text(
+                          const Text(
                             "Recordar contraseña",
                             style: TextStyle(
                               color: Color.fromRGBO(57, 57, 57, 1),

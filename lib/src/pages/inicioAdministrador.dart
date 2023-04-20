@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class inicioAdministrador extends StatelessWidget {
-  const inicioAdministrador({super.key});
+class InicioAdministrador extends StatelessWidget {
+  const InicioAdministrador({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class inicioAdministrador extends StatelessWidget {
       // AppBar //
       appBar: AppBar(
         elevation: 0.0,
-        title: Text(
+        title: const Text(
           "Menú principal",
           style: TextStyle(
             fontFamily: 'Yesteryear',
@@ -19,7 +19,7 @@ class inicioAdministrador extends StatelessWidget {
         ),
         centerTitle:
             true, // Establecer esta propiedad en true para centrar el título
-        backgroundColor: Color.fromRGBO(1, 46, 103, 1),
+        backgroundColor: const Color.fromRGBO(1, 46, 103, 1),
       ),
       // Menu lateral (Drawer) //
       drawer: Drawer(
@@ -29,7 +29,7 @@ class inicioAdministrador extends StatelessWidget {
             SizedBox(
               height: 130,
               child: DrawerHeader(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color.fromRGBO(1, 46, 103, 1),
                 ),
                 child: Column(
@@ -46,7 +46,7 @@ class inicioAdministrador extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 33),
                           child: Column(
-                            children: [
+                            children: const [
                               Text(
                                 "Michael Morales",
                                 style: TextStyle(
@@ -75,7 +75,7 @@ class inicioAdministrador extends StatelessWidget {
                 height: 38,
                 child: Image.asset("assets/img/IconoMenuPrincipal.jpg"),
               ),
-              title: Text(
+              title: const Text(
                 'Menú principal',
                 style: TextStyle(),
               ),
@@ -86,7 +86,7 @@ class inicioAdministrador extends StatelessWidget {
                 height: 38,
                 child: Image.asset("assets/img/IconoMesas.jpg"),
               ),
-              title: Text('Mesas'),
+              title: const Text('Mesas'),
               onTap: () {},
             ),
             ListTile(
@@ -94,7 +94,7 @@ class inicioAdministrador extends StatelessWidget {
                 height: 38,
                 child: Image.asset("assets/img/IconoMenu.jpg"),
               ),
-              title: Text('Menús'),
+              title: const Text('Menús'),
               onTap: () {},
             ),
             ListTile(
@@ -102,7 +102,7 @@ class inicioAdministrador extends StatelessWidget {
                 height: 38,
                 child: Image.asset("assets/img/IconoPedidos.jpg"),
               ),
-              title: Text('Pedidos'),
+              title: const Text('Pedidos'),
               onTap: () {},
             ),
             ListTile(
@@ -110,7 +110,7 @@ class inicioAdministrador extends StatelessWidget {
                 height: 38,
                 child: Image.asset("assets/img/IconoVentas.jpg"),
               ),
-              title: Text('Ventas'),
+              title: const Text('Ventas'),
               onTap: () {},
             ),
             ListTile(
@@ -118,7 +118,7 @@ class inicioAdministrador extends StatelessWidget {
                 height: 38,
                 child: Image.asset("assets/img/IconoTrabajadores.jpg"),
               ),
-              title: Text('Trabajadores'),
+              title: const Text('Trabajadores'),
               onTap: () {},
             ),
             ListTile(
@@ -126,7 +126,7 @@ class inicioAdministrador extends StatelessWidget {
                 height: 38,
                 child: Image.asset("assets/img/IconoInformes.jpg"),
               ),
-              title: Text('Informes'),
+              title: const Text('Informes'),
               onTap: () {},
             ),
             ListTile(
@@ -134,7 +134,7 @@ class inicioAdministrador extends StatelessWidget {
                 height: 38,
                 child: Image.asset("assets/img/IconoProveedores.jpg"),
               ),
-              title: Text('Proveedores'),
+              title: const Text('Proveedores'),
               onTap: () {},
             ),
             ListTile(
@@ -142,7 +142,7 @@ class inicioAdministrador extends StatelessWidget {
                 height: 38,
                 child: Image.asset("assets/img/IconoInventario.jpg"),
               ),
-              title: Text('Inventario'),
+              title: const Text('Inventario'),
               onTap: () {},
             ),
             ListTile(
@@ -150,7 +150,7 @@ class inicioAdministrador extends StatelessWidget {
                 height: 38,
                 child: Image.asset("assets/img/IconoCerrarSesion.jpg"),
               ),
-              title: Text('Cerrar sesión'),
+              title: const Text('Cerrar sesión'),
               onTap: () {},
             ),
           ],
@@ -158,7 +158,7 @@ class inicioAdministrador extends StatelessWidget {
       ),
       body: Container(
         color: Colors.white,
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
           top: 15,
         ),
         child: Column(
@@ -170,15 +170,15 @@ class inicioAdministrador extends StatelessWidget {
                 Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 5),
+                      padding: const EdgeInsets.symmetric(horizontal: 5),
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(
-                              Color.fromRGBO(245, 248, 255, 1)),
+                              const Color.fromRGBO(245, 248, 255, 1)),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
-                              side: BorderSide(
+                              side: const BorderSide(
                                 width: 0,
                                 color: Color.fromRGBO(193, 211, 255,
                                     1), // Color del borde exterior
@@ -186,13 +186,15 @@ class inicioAdministrador extends StatelessWidget {
                             ),
                           ),
                           overlayColor: MaterialStateProperty.all(
-                            Color.fromRGBO(245, 248, 255, 1)
+                            const Color.fromRGBO(245, 248, 255, 1)
                                 .withOpacity(0.2), // Color de superposición
                           ),
                           elevation: MaterialStateProperty.all(
                               0.0), // Quítale las sombras
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, 'crear2');
+                        },
                         child: SizedBox(
                           width: 124,
                           height: 110,
@@ -206,7 +208,7 @@ class inicioAdministrador extends StatelessWidget {
                                       Image.asset('assets/img/MesasColor.jpg'),
                                 ),
                               ),
-                              Text(
+                              const Text(
                                 "Mesas",
                                 style: TextStyle(
                                   fontSize: 16,
@@ -214,7 +216,7 @@ class inicioAdministrador extends StatelessWidget {
                                 ),
                                 textAlign: TextAlign.center,
                               ),
-                              Text(
+                              const Text(
                                 "Agregue, modifique o elimine mesas",
                                 style: TextStyle(
                                   color: Color.fromRGBO(57, 57, 57, 1),
@@ -233,15 +235,15 @@ class inicioAdministrador extends StatelessWidget {
                 Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 5),
+                      padding: const EdgeInsets.symmetric(horizontal: 5),
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(
-                              Color.fromRGBO(245, 248, 255, 1)),
+                              const Color.fromRGBO(245, 248, 255, 1)),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
-                              side: BorderSide(
+                              side: const BorderSide(
                                 width: 0,
                                 color: Color.fromRGBO(193, 211, 255,
                                     1), // Color del borde exterior
@@ -249,7 +251,7 @@ class inicioAdministrador extends StatelessWidget {
                             ),
                           ),
                           overlayColor: MaterialStateProperty.all(
-                            Color.fromRGBO(245, 248, 255, 1)
+                            const Color.fromRGBO(245, 248, 255, 1)
                                 .withOpacity(0.2), // Color de superposición
                           ),
                           elevation: MaterialStateProperty.all(
@@ -269,7 +271,7 @@ class inicioAdministrador extends StatelessWidget {
                                       Image.asset('assets/img/MenuColor.jpg'),
                                 ),
                               ),
-                              Text(
+                              const Text(
                                 "Menús",
                                 style: TextStyle(
                                   fontSize: 16,
@@ -277,7 +279,7 @@ class inicioAdministrador extends StatelessWidget {
                                 ),
                                 textAlign: TextAlign.center,
                               ),
-                              Text(
+                              const Text(
                                 "Agregue, modifique o elimine menús",
                                 style: TextStyle(
                                   color: Color.fromRGBO(57, 57, 57, 1),
@@ -301,16 +303,16 @@ class inicioAdministrador extends StatelessWidget {
                 Column(
                   children: [
                     Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 5, vertical: 10),
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(
-                              Color.fromRGBO(245, 248, 255, 1)),
+                              const Color.fromRGBO(245, 248, 255, 1)),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
-                              side: BorderSide(
+                              side: const BorderSide(
                                 width: 0,
                                 color: Color.fromRGBO(193, 211, 255,
                                     1), // Color del borde exterior
@@ -318,7 +320,7 @@ class inicioAdministrador extends StatelessWidget {
                             ),
                           ),
                           overlayColor: MaterialStateProperty.all(
-                            Color.fromRGBO(245, 248, 255, 1)
+                            const Color.fromRGBO(245, 248, 255, 1)
                                 .withOpacity(0.2), // Color de superposición
                           ),
                           elevation: MaterialStateProperty.all(
@@ -338,7 +340,7 @@ class inicioAdministrador extends StatelessWidget {
                                       'assets/img/PedidosColor.jpg'),
                                 ),
                               ),
-                              Text(
+                              const Text(
                                 "Pedidos",
                                 style: TextStyle(
                                   fontSize: 16,
@@ -346,7 +348,7 @@ class inicioAdministrador extends StatelessWidget {
                                 ),
                                 textAlign: TextAlign.center,
                               ),
-                              Text(
+                              const Text(
                                 "Consulte los pedidos realizados por mesa",
                                 style: TextStyle(
                                   color: Color.fromRGBO(57, 57, 57, 1),
@@ -365,16 +367,16 @@ class inicioAdministrador extends StatelessWidget {
                 Column(
                   children: [
                     Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 5, vertical: 10),
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(
-                              Color.fromRGBO(245, 248, 255, 1)),
+                              const Color.fromRGBO(245, 248, 255, 1)),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
-                              side: BorderSide(
+                              side: const BorderSide(
                                 width: 0,
                                 color: Color.fromRGBO(193, 211, 255,
                                     1), // Color del borde exterior
@@ -382,7 +384,7 @@ class inicioAdministrador extends StatelessWidget {
                             ),
                           ),
                           overlayColor: MaterialStateProperty.all(
-                            Color.fromRGBO(245, 248, 255, 1)
+                            const Color.fromRGBO(245, 248, 255, 1)
                                 .withOpacity(0.2), // Color de superposición
                           ),
                           elevation: MaterialStateProperty.all(
@@ -402,7 +404,7 @@ class inicioAdministrador extends StatelessWidget {
                                       Image.asset('assets/img/VentasColor.jpg'),
                                 ),
                               ),
-                              Text(
+                              const Text(
                                 "Ventas",
                                 style: TextStyle(
                                   fontSize: 16,
@@ -410,7 +412,7 @@ class inicioAdministrador extends StatelessWidget {
                                 ),
                                 textAlign: TextAlign.center,
                               ),
-                              Text(
+                              const Text(
                                 "Consulte las ventas realizadas",
                                 style: TextStyle(
                                   color: Color.fromRGBO(57, 57, 57, 1),
@@ -434,15 +436,15 @@ class inicioAdministrador extends StatelessWidget {
                 Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 5),
+                      padding: const EdgeInsets.symmetric(horizontal: 5),
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(
-                              Color.fromRGBO(245, 248, 255, 1)),
+                              const Color.fromRGBO(245, 248, 255, 1)),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
-                              side: BorderSide(
+                              side: const BorderSide(
                                 width: 0,
                                 color: Color.fromRGBO(193, 211, 255,
                                     1), // Color del borde exterior
@@ -450,7 +452,7 @@ class inicioAdministrador extends StatelessWidget {
                             ),
                           ),
                           overlayColor: MaterialStateProperty.all(
-                            Color.fromRGBO(245, 248, 255, 1)
+                            const Color.fromRGBO(245, 248, 255, 1)
                                 .withOpacity(0.2), // Color de superposición
                           ),
                           elevation: MaterialStateProperty.all(
@@ -470,7 +472,7 @@ class inicioAdministrador extends StatelessWidget {
                                       'assets/img/TrabajadoresColor.jpg'),
                                 ),
                               ),
-                              Text(
+                              const Text(
                                 "Trabajadores",
                                 style: TextStyle(
                                   fontSize: 16,
@@ -478,7 +480,7 @@ class inicioAdministrador extends StatelessWidget {
                                 ),
                                 textAlign: TextAlign.center,
                               ),
-                              Text(
+                              const Text(
                                 "Consulte el personal de la empresa",
                                 style: TextStyle(
                                   color: Color.fromRGBO(57, 57, 57, 1),
@@ -497,15 +499,15 @@ class inicioAdministrador extends StatelessWidget {
                 Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 5),
+                      padding: const EdgeInsets.symmetric(horizontal: 5),
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(
-                              Color.fromRGBO(245, 248, 255, 1)),
+                              const Color.fromRGBO(245, 248, 255, 1)),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
-                              side: BorderSide(
+                              side: const BorderSide(
                                 width: 0,
                                 color: Color.fromRGBO(193, 211, 255,
                                     1), // Color del borde exterior
@@ -513,7 +515,7 @@ class inicioAdministrador extends StatelessWidget {
                             ),
                           ),
                           overlayColor: MaterialStateProperty.all(
-                            Color.fromRGBO(245, 248, 255, 1)
+                            const Color.fromRGBO(245, 248, 255, 1)
                                 .withOpacity(0.2), // Color de superposición
                           ),
                           elevation: MaterialStateProperty.all(
@@ -533,7 +535,7 @@ class inicioAdministrador extends StatelessWidget {
                                       'assets/img/InformesColor.jpg'),
                                 ),
                               ),
-                              Text(
+                              const Text(
                                 "Informes",
                                 style: TextStyle(
                                   fontSize: 16,
@@ -541,7 +543,7 @@ class inicioAdministrador extends StatelessWidget {
                                 ),
                                 textAlign: TextAlign.center,
                               ),
-                              Text(
+                              const Text(
                                 "Consulte las estadisticas de la empresa",
                                 style: TextStyle(
                                   color: Color.fromRGBO(57, 57, 57, 1),
@@ -565,16 +567,16 @@ class inicioAdministrador extends StatelessWidget {
                 Column(
                   children: [
                     Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 5, vertical: 10),
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(
-                              Color.fromRGBO(245, 248, 255, 1)),
+                              const Color.fromRGBO(245, 248, 255, 1)),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
-                              side: BorderSide(
+                              side: const BorderSide(
                                 width: 0,
                                 color: Color.fromRGBO(193, 211, 255,
                                     1), // Color del borde exterior
@@ -582,7 +584,7 @@ class inicioAdministrador extends StatelessWidget {
                             ),
                           ),
                           overlayColor: MaterialStateProperty.all(
-                            Color.fromRGBO(245, 248, 255, 1)
+                            const Color.fromRGBO(245, 248, 255, 1)
                                 .withOpacity(0.2), // Color de superposición
                           ),
                           elevation: MaterialStateProperty.all(
@@ -602,7 +604,7 @@ class inicioAdministrador extends StatelessWidget {
                                       'assets/img/ProveedoresColor.jpg'),
                                 ),
                               ),
-                              Text(
+                              const Text(
                                 "Proveedores",
                                 style: TextStyle(
                                   fontSize: 16,
@@ -610,7 +612,7 @@ class inicioAdministrador extends StatelessWidget {
                                 ),
                                 textAlign: TextAlign.center,
                               ),
-                              Text(
+                              const Text(
                                 "Consulte los proveedores actuales",
                                 style: TextStyle(
                                   color: Color.fromRGBO(57, 57, 57, 1),
@@ -629,16 +631,16 @@ class inicioAdministrador extends StatelessWidget {
                 Column(
                   children: [
                     Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 5, vertical: 10),
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(
-                              Color.fromRGBO(245, 248, 255, 1)),
+                              const Color.fromRGBO(245, 248, 255, 1)),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
-                              side: BorderSide(
+                              side: const BorderSide(
                                 width: 0,
                                 color: Color.fromRGBO(193, 211, 255,
                                     1), // Color del borde exterior
@@ -646,7 +648,7 @@ class inicioAdministrador extends StatelessWidget {
                             ),
                           ),
                           overlayColor: MaterialStateProperty.all(
-                            Color.fromRGBO(245, 248, 255, 1)
+                            const Color.fromRGBO(245, 248, 255, 1)
                                 .withOpacity(0.2), // Color de superposición
                           ),
                           elevation: MaterialStateProperty.all(
@@ -666,7 +668,7 @@ class inicioAdministrador extends StatelessWidget {
                                       'assets/img/InventarioColor.jpg'),
                                 ),
                               ),
-                              Text(
+                              const Text(
                                 "Inventario",
                                 style: TextStyle(
                                   fontSize: 16,
@@ -674,7 +676,7 @@ class inicioAdministrador extends StatelessWidget {
                                 ),
                                 textAlign: TextAlign.center,
                               ),
-                              Text(
+                              const Text(
                                 "Consulte el stock disponible",
                                 style: TextStyle(
                                   color: Color.fromRGBO(57, 57, 57, 1),
