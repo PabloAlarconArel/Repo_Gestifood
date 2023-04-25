@@ -1,5 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/src/pages/inicioAdministrador.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -9,22 +11,91 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  GlobalKey<FormState> _formkey = GlobalKey();
-  bool _isChecked = false;
-  String _email = '';
-  String _password = '';
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
 
-  void _submit() {
-    final isLogin = _formkey.currentState!.validate();
-    if (!isLogin) {
-      return;
+  String? _emailError;
+  String? _passwordError;
+  bool _rememberSession = false;
+
+  void _validateFields() {
+    if (_emailController.text.isEmpty) {
+      setState(() {
+        _emailError = 'Debe ingresar un correo electronico';
+      });
+    } else {
+      setState(() {
+        _emailError = null;
+      });
     }
-    // Aquí puede agregar la lógica para procesar el inicio de sesión
-    final route = MaterialPageRoute(
-      builder: (context) => const InicioAdministrador(),
-    );
-    Navigator.push(context, route);
+
+    if (_passwordController.text.isEmpty) {
+      setState(() {
+        _passwordError = 'Debe ingresar una contraseña';
+      });
+    } else {
+      setState(() {
+        _passwordError = null;
+      });
+    }
   }
+
+  Future<void> _signIn() async {
+    _validateFields();
+
+    // Si ambos campos no están vacíos, inicia sesión y recuerda la sesión iniciada si se selecciona esa opción
+    if (_emailController.text.isNotEmpty &&
+        _passwordController.text.isNotEmpty) {
+      try {
+        final authResult =
+            await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: _emailController.text.trim(),
+          password: _passwordController.text.trim(),
+        );
+        if (_rememberSession) {
+          await FirebaseAuth.instance.setPersistence(Persistence.LOCAL);
+        } else {
+          await FirebaseAuth.instance.setPersistence(Persistence.SESSION);
+        }
+        // El usuario ha iniciado sesión correctamente
+      } on FirebaseAuthException catch (e) {
+        if (e.code == 'user-not-found') {
+          setState(() {
+            _emailError =
+                'No se encontró ningun usuario con este correo electronico';
+          });
+        } else if (e.code == 'wrong-password') {
+          setState(() {
+            _passwordError = 'La contraseña es incorrecta';
+          });
+        } else if (e.code == 'invalid-email') {
+          setState(() {
+            _emailError = 'El correo electronico no es válido';
+          });
+        } else {
+          setState(() {
+            _emailError =
+                'Ha ocurrido un error. Por favor, inténtalo de nuevo.';
+          });
+        }
+      } catch (e) {
+        setState(() {
+          _emailError = 'Ha ocurrido un error. Por favor, inténtalo de nuevo.';
+        });
+      }
+    }
+  }
+  //void _submit() {
+  //final isLogin = _formkey.currentState!.validate();
+  //if (!isLogin) {
+  //return;
+  //}
+  // Aquí puede agregar la lógica para procesar el inicio de sesión
+  //final route = MaterialPageRoute(
+  //builder: (context) => const InicioAdministrador(),
+  //);
+  //Navigator.push(context, route);
+  //}
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +116,7 @@ class _LoginState extends State<Login> {
         backgroundColor: const Color.fromRGBO(1, 46, 103, 1),
       ),
       body: Form(
-        key: _formkey,
+        //key: _formkey,
         child: Container(
           width: double.infinity,
           color: Colors.white,
@@ -80,18 +151,20 @@ class _LoginState extends State<Login> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 38, vertical: 11),
                     child: TextFormField(
-                      onChanged: (data) {
-                        _email = data;
-                      },
-                      validator: (data) {
-                        if (data == null || !data.contains('@')) {
-                          return "Introduzca un correo electrónico válido";
-                        }
-                        return null;
-                      },
+                      controller: _emailController,
+                      //onChanged: (data) {
+                      //_email = data;
+                      //},
+                      //validator: (data) {
+                      //if (data == null || !data.contains('@')) {
+                      //return "Introduzca un correo electrónico válido";
+                      //}
+                      //return null;
+                      //},
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         labelText: 'Correo electrónico',
+                        errorText: _emailError,
                         prefixIcon: const Icon(
                           color: Color.fromRGBO(0, 0, 0, 0.7),
                           Icons.mail_outline_outlined,
@@ -111,19 +184,21 @@ class _LoginState extends State<Login> {
                   // Contraseña
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 38),
-                    child: TextFormField(
-                      onChanged: (data) {
-                        _password = data;
-                      },
-                      validator: (data) {
-                        if (data == null || data.trim().length == 0) {
-                          return 'Introduzca una contraseña';
-                        }
-                        return null;
-                      },
+                    child: TextField(
+                      controller: _passwordController,
+                      //onChanged: (data) {
+                      //_password = data;
+                      //},
+                      //validator: (data) {
+                      //if (data == null || data.trim().length == 0) {
+                      //return 'Introduzca una contraseña';
+                      //}
+                      //return null;
+                      //},
                       obscureText: true,
                       decoration: InputDecoration(
                         labelText: 'Contraseña',
+                        errorText: _passwordError,
                         prefixIcon: const Icon(
                           color: Color.fromRGBO(0, 0, 0, 0.7),
                           Icons.lock_person_outlined,
@@ -151,10 +226,10 @@ class _LoginState extends State<Login> {
                           Transform.scale(
                             scale: 0.6,
                             child: Checkbox(
-                              value: _isChecked,
-                              onChanged: (newValue) {
+                              value: _rememberSession,
+                              onChanged: (value) {
                                 setState(() {
-                                  _isChecked = newValue!;
+                                  _rememberSession = value!;
                                 });
                               },
                               activeColor: Color.fromRGBO(1, 46, 103, 1),
@@ -184,7 +259,7 @@ class _LoginState extends State<Login> {
                     height: 45,
                     width: 140,
                     child: ElevatedButton(
-                      onPressed: _submit,
+                      onPressed: _signIn,
                       child: Text(
                         "Iniciar sesión",
                         style: TextStyle(

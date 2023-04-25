@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/src/pages/modulos/main_page.dart';
 import 'package:flutter_application_1/src/pages/pages.dart';
 
 class AppRoutes {
-  static const initialRoute = 'login';
+  static const initialRoute = 'main_page';
 
   static Map<String, Widget Function(BuildContext)> routes = {
     'login': (BuildContext) => const Login(),
@@ -11,6 +12,7 @@ class AppRoutes {
     'editar': (BuildContext) => const EditarPage(),
     'crear2': (BuildContext) => const Crear2(),
     'error': (BuildContext) => const Error(),
+    'main_page' : (BuildContext) => const MainPage(),
   };
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {

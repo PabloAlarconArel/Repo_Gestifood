@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "233758197520",
+    "project_id": "lenguajesmodernos2023",
+    "storage_bucket": "lenguajesmodernos2023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233758197520:android:36a2cedfca695007008795",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "233758197520-r04o535hmkkk19nrbm0qkk1fsm547k34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBnlghQbITa9hfyuTeC7F2iMDk3yhNYBw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "233758197520-r04o535hmkkk19nrbm0qkk1fsm547k34.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "233758197520-23emc0kal1ljcbvrsvfnpqnqp86hkobd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterApplication1"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

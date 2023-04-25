@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class InicioAdministrador extends StatelessWidget {
@@ -73,7 +74,7 @@ class InicioAdministrador extends StatelessWidget {
             ListTile(
               leading: SizedBox(
                 height: 38,
-                child: Image.asset("assets/img/IconoMenuPrincipal.jpg"),
+                child: Image.asset("assets/img/MenuPrincipal.jpg"),
               ),
               title: const Text(
                 'Menú principal',
@@ -84,7 +85,7 @@ class InicioAdministrador extends StatelessWidget {
             ListTile(
               leading: SizedBox(
                 height: 38,
-                child: Image.asset("assets/img/IconoMesas.jpg"),
+                child: Image.asset("assets/img/Mesas.jpg"),
               ),
               title: const Text('Mesas'),
               onTap: () {},
@@ -92,7 +93,7 @@ class InicioAdministrador extends StatelessWidget {
             ListTile(
               leading: SizedBox(
                 height: 38,
-                child: Image.asset("assets/img/IconoMenu.jpg"),
+                child: Image.asset("assets/img/Menus.jpg"),
               ),
               title: const Text('Menús'),
               onTap: () {},
@@ -100,7 +101,7 @@ class InicioAdministrador extends StatelessWidget {
             ListTile(
               leading: SizedBox(
                 height: 38,
-                child: Image.asset("assets/img/IconoPedidos.jpg"),
+                child: Image.asset("assets/img/Pedidos.jpg"),
               ),
               title: const Text('Pedidos'),
               onTap: () {},
@@ -108,7 +109,7 @@ class InicioAdministrador extends StatelessWidget {
             ListTile(
               leading: SizedBox(
                 height: 38,
-                child: Image.asset("assets/img/IconoVentas.jpg"),
+                child: Image.asset("assets/img/Ventas.jpg"),
               ),
               title: const Text('Ventas'),
               onTap: () {},
@@ -116,7 +117,7 @@ class InicioAdministrador extends StatelessWidget {
             ListTile(
               leading: SizedBox(
                 height: 38,
-                child: Image.asset("assets/img/IconoTrabajadores.jpg"),
+                child: Image.asset("assets/img/Trabajadores.jpg"),
               ),
               title: const Text('Trabajadores'),
               onTap: () {},
@@ -124,7 +125,7 @@ class InicioAdministrador extends StatelessWidget {
             ListTile(
               leading: SizedBox(
                 height: 38,
-                child: Image.asset("assets/img/IconoInformes.jpg"),
+                child: Image.asset("assets/img/Informes.jpg"),
               ),
               title: const Text('Informes'),
               onTap: () {},
@@ -132,7 +133,7 @@ class InicioAdministrador extends StatelessWidget {
             ListTile(
               leading: SizedBox(
                 height: 38,
-                child: Image.asset("assets/img/IconoProveedores.jpg"),
+                child: Image.asset("assets/img/Proveedores.jpg"),
               ),
               title: const Text('Proveedores'),
               onTap: () {},
@@ -140,7 +141,7 @@ class InicioAdministrador extends StatelessWidget {
             ListTile(
               leading: SizedBox(
                 height: 38,
-                child: Image.asset("assets/img/IconoInventario.jpg"),
+                child: Image.asset("assets/img/Inventario.jpg"),
               ),
               title: const Text('Inventario'),
               onTap: () {},
@@ -148,10 +149,12 @@ class InicioAdministrador extends StatelessWidget {
             ListTile(
               leading: SizedBox(
                 height: 38,
-                child: Image.asset("assets/img/IconoCerrarSesion.jpg"),
+                child: Image.asset("assets/img/CerrarSesion.jpg"),
               ),
               title: const Text('Cerrar sesión'),
-              onTap: () {},
+              onTap: () {
+                FirebaseAuth.instance.signOut();
+              },
             ),
           ],
         ),
@@ -204,8 +207,7 @@ class InicioAdministrador extends StatelessWidget {
                                 padding: const EdgeInsets.all(0),
                                 child: SizedBox(
                                   height: 60,
-                                  child:
-                                      Image.asset('assets/img/MesasColor.jpg'),
+                                  child: Image.asset('assets/img/Mesas.jpg'),
                                 ),
                               ),
                               const Text(
@@ -267,8 +269,7 @@ class InicioAdministrador extends StatelessWidget {
                                 padding: const EdgeInsets.all(0),
                                 child: SizedBox(
                                   height: 60,
-                                  child:
-                                      Image.asset('assets/img/MenuColor.jpg'),
+                                  child: Image.asset('assets/img/Menus.jpg'),
                                 ),
                               ),
                               const Text(
@@ -336,8 +337,7 @@ class InicioAdministrador extends StatelessWidget {
                                 padding: const EdgeInsets.all(1),
                                 child: SizedBox(
                                   height: 60,
-                                  child: Image.asset(
-                                      'assets/img/PedidosColor.jpg'),
+                                  child: Image.asset('assets/img/Pedidos.jpg'),
                                 ),
                               ),
                               const Text(
@@ -400,8 +400,7 @@ class InicioAdministrador extends StatelessWidget {
                                 padding: const EdgeInsets.all(1),
                                 child: SizedBox(
                                   height: 60,
-                                  child:
-                                      Image.asset('assets/img/VentasColor.jpg'),
+                                  child: Image.asset('assets/img/Ventas.jpg'),
                                 ),
                               ),
                               const Text(
@@ -469,7 +468,7 @@ class InicioAdministrador extends StatelessWidget {
                                 child: SizedBox(
                                   height: 60,
                                   child: Image.asset(
-                                      'assets/img/TrabajadoresColor.jpg'),
+                                      'assets/img/Trabajadores.jpg'),
                                 ),
                               ),
                               const Text(
@@ -531,8 +530,7 @@ class InicioAdministrador extends StatelessWidget {
                                 padding: const EdgeInsets.all(1),
                                 child: SizedBox(
                                   height: 60,
-                                  child: Image.asset(
-                                      'assets/img/InformesColor.jpg'),
+                                  child: Image.asset('assets/img/Informes.jpg'),
                                 ),
                               ),
                               const Text(
@@ -600,8 +598,8 @@ class InicioAdministrador extends StatelessWidget {
                                 padding: const EdgeInsets.all(2),
                                 child: SizedBox(
                                   height: 60,
-                                  child: Image.asset(
-                                      'assets/img/ProveedoresColor.jpg'),
+                                  child:
+                                      Image.asset('assets/img/Proveedores.jpg'),
                                 ),
                               ),
                               const Text(
@@ -664,8 +662,8 @@ class InicioAdministrador extends StatelessWidget {
                                 padding: const EdgeInsets.all(2),
                                 child: SizedBox(
                                   height: 60,
-                                  child: Image.asset(
-                                      'assets/img/InventarioColor.jpg'),
+                                  child:
+                                      Image.asset('assets/img/Inventario.jpg'),
                                 ),
                               ),
                               const Text(
